@@ -8,6 +8,7 @@
                         <!-- Logo -->
                         <div class="flex-shrink-0 flex items-center">
                             <a href="/dashboard">
+                                <!-- Logo admin -->
                                 <jet-application-mark class="block h-15 w-auto" />
                             </a>
                         </div>
@@ -19,6 +20,9 @@
                             </jet-nav-link>
                             <jet-nav-link href="/dashboard/affiliated" :active="$page.currentRouteName == 'dashboard.affiliated'">
                                 Participantes 
+                            </jet-nav-link>
+                            <jet-nav-link :href="url">
+                                Tablero Maestro 
                             </jet-nav-link>
                            
                         </div>
@@ -232,6 +236,7 @@
         data() {
             return {
                 showingNavigationDropdown: false,
+                url: null,
             }
         },
 
@@ -250,11 +255,21 @@
                 })
             },
         },
-
         computed: {
             path() {
                 return window.location.pathname
             }
-        }
+        },
+        beforeMount(){
+            let usuario = localStorage.getItem('dni');
+            if (usuario) {
+                let url = "/BINGO/tablero_jugador.html";
+                this.url = url;
+            } else {
+                let url = "/BINGO/index.html";
+                this.url = url;
+            }
+
+        },
     }
 </script>

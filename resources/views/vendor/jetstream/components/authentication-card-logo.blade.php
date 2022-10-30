@@ -1,3 +1,3 @@
 <a href="/">
-    <img src="./img/logotipo_coomeva.svg" class="h-20 w-auto" alt="Coomeva">
+    <img src="./img/logo.svg" class="h-40 w-auto" alt="Coomeva">
 </a>
