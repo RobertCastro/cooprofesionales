@@ -18,7 +18,7 @@
                                 Informe
                             </jet-nav-link>
                             <jet-nav-link href="/dashboard/affiliated" :active="$page.currentRouteName == 'dashboard.affiliated'">
-                                Asociados
+                                Participantes 
                             </jet-nav-link>
                            
                         </div>

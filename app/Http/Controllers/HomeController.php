@@ -83,7 +83,9 @@ class HomeController extends Controller
         $user->updated_at = date("Y-m-d H:i:s");
         $user->save();
 
-        return "OK";
+        return response()->json([
+            'status' => 'Ok'
+        ]);
 
     }
 }
