@@ -56,9 +56,16 @@ class DataController extends Controller
         return Excel::download(new DataExport, 'datos.xlsx');
     }
 
-    public function destroy() {
+    public function destroy($id) {
         // Data::truncate();
-        Data::where('number_table', '<>', '',)->update(['number_table' => '']);
-        return redirect()->route('dashboard.index')->with('success', "Datos Eliminados!");
+        if ($id) {
+            $data = Data::find($id);
+            $data->delete();
+            return redirect()->route('dashboard.affiliated')->with('success', 'Eliminado');
+        } else {
+            Data::where('number_table', '<>', '',)->update(['number_table' => '']);
+            return redirect()->route('dashboard.index')->with('success', "Datos Eliminados!");
+        }
     }
+
 }

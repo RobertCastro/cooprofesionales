@@ -21,9 +21,9 @@
                             <jet-nav-link href="/dashboard/affiliated" :active="$page.currentRouteName == 'dashboard.affiliated'">
                                 Participantes 
                             </jet-nav-link>
-                            <jet-nav-link :href="url">
+                            <!-- <a :href="url" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                                 Tablero Maestro 
-                            </jet-nav-link>
+                            </a> -->
                            
                         </div>
                     </div>
@@ -260,16 +260,17 @@
                 return window.location.pathname
             }
         },
-        beforeMount(){
-            let usuario = localStorage.getItem('dni');
-            if (usuario) {
-                let url = "/BINGO/tablero_jugador.html";
-                this.url = url;
-            } else {
-                let url = "/BINGO/index.html";
-                this.url = url;
-            }
-
-        },
+        // beforeMount(){
+        //     let usuario = localStorage.getItem('dni');
+            
+        //     if (usuario) {
+        //         let url = "/BINGO/tablero_jugador.html";
+        //         localStorage.setItem('urlifram', url);
+        //         this.url = url;
+        //     } else {
+        //         let url = "/BINGO/index.html";
+        //         this.url = url;
+        //     }
+        // }
     }
 </script>
