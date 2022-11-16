@@ -17,7 +17,7 @@ export default {
     },
     data() {
         return {
-            url: null,
+            url: "/BINGO/index.html",
         }
     },
     methods: {
@@ -25,16 +25,16 @@ export default {
             location.reload();
         }
     },
-    beforeMount(){
-        let usuario = localStorage.getItem('dni');
-        if (usuario) {
-            let url = "/BINGO/tablero_jugador.html";
-            this.url = url;
-        } else {
-            let url = "/BINGO/index.html";
-            this.url = url;
-        }
+    // beforeMount(){
+    //     let usuario = localStorage.getItem('dni');
+    //     if (usuario) {
+    //         let url = "/BINGO/tablero_jugador.html";
+    //         this.url = url;
+    //     } else {
+    //         let url = "/BINGO/index.html";
+    //         this.url = url;
+    //     }
 
-    },
+    // },
 }
 </script>
